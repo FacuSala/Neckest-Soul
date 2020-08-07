@@ -5,6 +5,7 @@ using UnityEngine;
 public class Prota : MonoBehaviour {
 
     public float velocity = 10f;
+    public GameObject sword;
 
     private Rigidbody2D rigidBody;
     // Start is called before the first frame update
@@ -24,5 +25,10 @@ public class Prota : MonoBehaviour {
         rigidBody.AddForce(Vector2.up * y * velocity);
 
         rigidBody.velocity = new Vector2 ( x==0f? 0f : velMaxX , y==0 ? 0f : velMaxY);
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            sword.GetComponent<BoxCollider2D>().enabled = false;
+        }
     }
 }

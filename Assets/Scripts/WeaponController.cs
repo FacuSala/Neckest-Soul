@@ -2,22 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WeaponController : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
+public class WeaponController : MonoBehaviour {
+    void Start() {
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
+    void Update() {
         
     }
 
-    void OnTriggerEnter2D(Collider2D other)
-    {
-       Debug.Log("Soy una perra colisionadora"); 
+    void OnTriggerEnter2D(Collider2D other) {
+        if ( other.tag != "Player")
+            Debug.Log("Soy una perra colisionadora"); 
+    }
+
+        void onTriggerStay2D(Collider2D other) {
+        if ( other.tag != "Player")
+            Debug.Log("Soy una perra colisionadora"); 
     }
 }

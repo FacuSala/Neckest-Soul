@@ -2710,6 +2710,11 @@ PrefabInstance:
       propertyPath: newPlace
       value: Townscene
       objectReference: {fileID: 0}
+    - target: {fileID: 585599038451312537, guid: b25deb0b6f71d4305a4fcb297d4fb23d,
+        type: 3}
+      propertyPath: spawnName
+      value: TownToHouse1
+      objectReference: {fileID: 0}
     - target: {fileID: 585599038451312538, guid: b25deb0b6f71d4305a4fcb297d4fb23d,
         type: 3}
       propertyPath: m_Name
@@ -2779,6 +2784,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1013094481375515755, guid: 489385aea57f04b7d9b49065ea03eb29,
+        type: 3}
+      propertyPath: spawnName
+      value: TownToHouse1
+      objectReference: {fileID: 0}
     - target: {fileID: 8008486679115076755, guid: 489385aea57f04b7d9b49065ea03eb29,
         type: 3}
       propertyPath: m_Name

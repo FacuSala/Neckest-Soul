@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
+    public static bool playerCreated;
     private const string horizontal = "Horizontal";
     private const string vertical = "Vertical";
     private const string lastHorizontal = "LastHorizontal";
@@ -10,16 +11,23 @@ public class PlayerController : MonoBehaviour {
 
     private Animator animator;
     private Rigidbody2D rigidBody;
-    private Vector2 lastMove;
 
     public float velocity = 10f;
+    public Vector2 lastMove;
     public GameObject sword;
-
+    public string nextSpawnName;
 
     void Start() {
         rigidBody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         lastMove = Vector2.zero;
+
+        if (!playerCreated) 
+            playerCreated = true;
+		else 
+			Destroy(gameObject);
+            
+		DontDestroyOnLoad(this.transform.gameObject);
     }
 
     void Update() {

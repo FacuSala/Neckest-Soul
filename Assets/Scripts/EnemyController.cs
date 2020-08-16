@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -21,8 +21,8 @@ public class EnemyController : MonoBehaviour {
         rigidbody = gameObject.GetComponent<Rigidbody2D>();
         animator = gameObject.GetComponent<Animator>();
 
-        timeBetweenStepsCounter = timeBetweenSteps;
-        timeToMakeStepCounter = timeToMakeStep;
+        timeBetweenStepsCounter = timeBetweenSteps*Random.Range(.5f, 1.5f);
+        timeToMakeStepCounter = timeToMakeStep*Random.Range(.5f, 1.5f);
     }
 
     void Update() {
@@ -41,7 +41,7 @@ public class EnemyController : MonoBehaviour {
             if (timeBetweenStepsCounter < 0) {
                 isMoving = true;
                 timeToMakeStepCounter = timeToMakeStep;
-                directionToMakeStep = new Vector2(Random.Range(-1,1), Random.Range(-1,1)) * speed;
+                directionToMakeStep = new Vector2(Random.Range(-1,2), Random.Range(-1,2)) * speed;
             }
         }
 

@@ -8,19 +8,24 @@ public class PlayerController : MonoBehaviour {
     private const string vertical = "Vertical";
     private const string lastHorizontal = "LastHorizontal";
     private const string lastVertical = "LastVertical";
+    private const string attacking = "Attacking";
 
     private Animator animator;
     private Rigidbody2D rigidBody;
+    private float timeToAttack = 0.5f;
+    private float timeToAttackCounter;
+    public bool isAttacking;
 
     public float velocity = 10f;
     public Vector2 lastMove;
-    public GameObject sword;
+    public GameObject weapon;
     public string nextSpawnName;
 
     void Start() {
         rigidBody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        lastMove = Vector2.zero;
+        lastMove = Vector2.down;
+        timeToAttackCounter = timeToAttack;
 
         if (!playerCreated) 
             playerCreated = true;
@@ -34,14 +39,19 @@ public class PlayerController : MonoBehaviour {
         float x = Input.GetAxis(horizontal);
         float y = Input.GetAxis(vertical);
 
+        if (Input.GetKeyDown(KeyCode.Space))
+            isAttacking = true;
+
+        if(isAttacking){
+            timeToAttackCounter -= Time.deltaTime;
+            if (timeToAttackCounter < 0) {
+                isAttacking = false;
+                timeToAttackCounter = timeToAttack;
+            }
+        }
+        
         setMovement(x, y);
         setAnimation(x, y);
-
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            sword.GetComponent<BoxCollider2D>().enabled = false;
-        }
     }
 
     void setMovement(float x, float y) {
@@ -51,7 +61,7 @@ public class PlayerController : MonoBehaviour {
         rigidBody.AddForce(Vector2.right * x * velocity);
         rigidBody.AddForce(Vector2.up * y * velocity);
 
-        rigidBody.velocity = new Vector2 ( x==0f? 0f : velMaxX , y==0 ? 0f : velMaxY);
+        rigidBody.velocity = new Vector2 ( x==0f ? 0f : velMaxX , y==0 ? 0f : velMaxY);
     }
 
     void setAnimation(float x, float y) {
@@ -62,5 +72,6 @@ public class PlayerController : MonoBehaviour {
         animator.SetFloat(vertical, y);
         animator.SetFloat(lastHorizontal, lastMove.x);
         animator.SetFloat(lastVertical, lastMove.y);
+        animator.SetBool(attacking, isAttacking);
     }
 }

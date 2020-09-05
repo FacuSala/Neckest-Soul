@@ -16,7 +16,8 @@ public class PlayerController : MonoBehaviour {
     private float timeToAttackCounter;
     public bool isAttacking;
 
-    public float velocity = 10f;
+    public float speed = 10f;
+    private float currentSpeed;
     public Vector2 lastMove;
     public GameObject weapon;
     public string nextSpawnName;
@@ -55,11 +56,13 @@ public class PlayerController : MonoBehaviour {
     }
 
     void setMovement(float x, float y) {
-        float velMaxX = Mathf.Clamp (rigidBody.velocity.x , - velocity , velocity);
-        float velMaxY = Mathf.Clamp (rigidBody.velocity.y , - velocity , velocity);
+        currentSpeed = Mathf.Abs(x) > .5f && Mathf.Abs(y) > .5f ? speed / Mathf.Sqrt(2) : speed;
+
+        float velMaxX = Mathf.Clamp (rigidBody.velocity.x , - currentSpeed , currentSpeed);
+        float velMaxY = Mathf.Clamp (rigidBody.velocity.y , - currentSpeed , currentSpeed);
         
-        rigidBody.AddForce(Vector2.right * x * velocity);
-        rigidBody.AddForce(Vector2.up * y * velocity);
+        rigidBody.AddForce(Vector2.right * x * currentSpeed);
+        rigidBody.AddForce(Vector2.up * y * currentSpeed);
 
         rigidBody.velocity = new Vector2 ( x==0f ? 0f : velMaxX , y==0 ? 0f : velMaxY);
     }

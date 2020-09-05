@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class HealthManager : MonoBehaviour {
+    public GameObject damageNumber;
     public int maxHealth;
     private int currentHealth;
 
@@ -17,7 +18,9 @@ public class HealthManager : MonoBehaviour {
 
     public void DamageCharacter(int damage) {
         currentHealth -= damage;
-        Debug.Log(currentHealth);
+
+        GameObject clone = (GameObject) Instantiate(damageNumber, this.transform.position, Quaternion.Euler(Vector3.zero));
+        clone.GetComponent<DamageNumber>().damagePoints = damage;
     }
 
     public void UpdateMaxHealth(int plusHealth) {

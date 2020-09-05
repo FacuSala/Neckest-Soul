@@ -176,9 +176,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ae8904262ee94650ac5223bcbb9f0d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: 5
+  isAttacking: 0
+  speed: 10
   lastMove: {x: 0, y: 0}
-  sword: {fileID: 1847988699307628611}
+  weapon: {fileID: 0}
   nextSpawnName: 
 --- !u!50 &1847988699547616944
 Rigidbody2D:
@@ -239,4 +240,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2dacece644bed499884363401b9151c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageNumber: {fileID: 8141082502817395285, guid: 92ae5ac10f2b84d5da768698df7bb146,
+    type: 3}
   maxHealth: 5

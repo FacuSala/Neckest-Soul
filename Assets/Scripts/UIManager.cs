@@ -20,6 +20,6 @@ public class UIManager : MonoBehaviour
         playerHealthText.text = "HP: " + playerHealthManager.currentHealth + "/" + playerHealthManager.maxHealth;
         playerMagicBar.maxValue = playerMagicManager.maxMagic;
         playerMagicBar.value = playerMagicManager.currentMagic;
-        playerMagicText.text = "HP: " + playerMagicManager.currentMagic + "/" + playerMagicManager.maxMagic;
+        playerMagicText.text = "MP: " + playerMagicManager.currentMagic + "/" + playerMagicManager.maxMagic;
     }
 }

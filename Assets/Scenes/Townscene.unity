@@ -61995,10 +61995,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealthBar: {fileID: 1719739581}
   playerHealthText: {fileID: 1391483400}
-  playerHealthManager: {fileID: 0}
+  playerHealthManager: {fileID: 1850610151}
   playerMagicBar: {fileID: 1624796167}
   playerMagicText: {fileID: 1586357250}
-  playerMagicManager: {fileID: 0}
+  playerMagicManager: {fileID: 565942406}
 --- !u!114 &816426189
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113516,6 +113516,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 5540729863396794744}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1850610151 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2231380209070397086, guid: 13bd15e833ced41fe96714f80e31a3ec,
+    type: 3}
+  m_PrefabInstance: {fileID: 1847988698383963744}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 565942405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dacece644bed499884363401b9151c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1860333926
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,6 +11,9 @@ public class MagicManager : MonoBehaviour
        currentMagic = maxMagic;
     }
     public void UseMagic (int mp){
-        currentMagic -= mp;
+        if (currentMagic >= mp)
+        {
+            currentMagic -= mp;
+        }
     }
 }

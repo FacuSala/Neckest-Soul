@@ -7,19 +7,19 @@ public class UIManager : MonoBehaviour
 {
     public Slider playerHealthBar;
     public Text playerHealthText;
-    public HealthManager playerHealthManeger;
+    public HealthManager playerHealthManager;
     public Slider playerMagicBar;
     public Text playerMagicText;
-    public HealthManager playerMagicManeger;
+    public MagicManager playerMagicManager;
 
 
     void Update()
     {
-        playerHealthBar.maxValue = playerHealthManeger.maxHealth;
-        playerHealthBar.value = playerHealthManeger.currentHealth;
-        playerHealthText.text = "HP: " + playerHealthManeger.currentHealth + "/" + playerHealthManeger.maxHealth;
-        playerMagicBar.maxValue = playerMagicManeger.maxHealth;
-        playerMagicBar.value = playerMagicManeger.currentHealth;
-        playerMagicText.text = "HP: " + playerMagicManeger.currentHealth + "/" + playerMagicManeger.maxHealth;
+        playerHealthBar.maxValue = playerHealthManager.maxHealth;
+        playerHealthBar.value = playerHealthManager.currentHealth;
+        playerHealthText.text = "HP: " + playerHealthManager.currentHealth + "/" + playerHealthManager.maxHealth;
+        playerMagicBar.maxValue = playerMagicManager.maxMagic;
+        playerMagicBar.value = playerMagicManager.currentMagic;
+        playerMagicText.text = "HP: " + playerMagicManager.currentMagic + "/" + playerMagicManager.maxMagic;
     }
 }

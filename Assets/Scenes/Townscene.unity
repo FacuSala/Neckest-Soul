@@ -59619,6 +59619,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &565942405 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1847988699547616939, guid: 13bd15e833ced41fe96714f80e31a3ec,
+    type: 3}
+  m_PrefabInstance: {fileID: 1847988698383963744}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &565942406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 565942405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49a61a619f0994d41b88af945fb7c535, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxMagic: 10
+  currentMagic: 0
 --- !u!1 &665365818
 GameObject:
   m_ObjectHideFlags: 0
@@ -61975,10 +61995,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealthBar: {fileID: 1719739581}
   playerHealthText: {fileID: 1391483400}
-  playerHealthManeger: {fileID: 1850610151}
+  playerHealthManager: {fileID: 0}
   playerMagicBar: {fileID: 1624796167}
   playerMagicText: {fileID: 1586357250}
-  playerMagicManeger: {fileID: 1850610151}
+  playerMagicManager: {fileID: 0}
 --- !u!114 &816426189
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113496,18 +113516,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 5540729863396794744}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1850610151 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2231380209070397086, guid: 13bd15e833ced41fe96714f80e31a3ec,
-    type: 3}
-  m_PrefabInstance: {fileID: 1847988698383963744}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2dacece644bed499884363401b9151c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1860333926
 GameObject:
   m_ObjectHideFlags: 0

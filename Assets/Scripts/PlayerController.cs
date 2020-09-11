@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour {
     private const string lastVertical = "LastVertical";
     private const string attacking = "Attacking";
 
+    private MagicManager magicManager;
+
     private Animator animator;
     private Rigidbody2D rigidBody;
     private float timeToAttack = 0.5f;
@@ -27,6 +29,7 @@ public class PlayerController : MonoBehaviour {
         animator = GetComponent<Animator>();
         lastMove = Vector2.down;
         timeToAttackCounter = timeToAttack;
+        magicManager = GetComponent<MagicManager>();
 
         if (!playerCreated) 
             playerCreated = true;
@@ -50,7 +53,9 @@ public class PlayerController : MonoBehaviour {
                 timeToAttackCounter = timeToAttack;
             }
         }
-        
+        if (Input.GetKeyDown(KeyCode.F)){
+            magicManager.UseMagic(1);
+        }
         setMovement(x, y);
         setAnimation(x, y);
     }

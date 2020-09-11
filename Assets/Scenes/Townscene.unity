@@ -61976,6 +61976,9 @@ MonoBehaviour:
   playerHealthBar: {fileID: 1719739581}
   playerHealthText: {fileID: 1391483400}
   playerHealthManeger: {fileID: 1850610151}
+  playerMagicBar: {fileID: 1624796167}
+  playerMagicText: {fileID: 1586357250}
+  playerMagicManeger: {fileID: 1850610151}
 --- !u!114 &816426189
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -7,14 +7,17 @@ public class HealthManager : MonoBehaviour {
     public GameObject damageNumber;
     public int maxHealth;
     public int currentHealth;
+    public float expWhenDefeated;
 
     void Start() {
         currentHealth = maxHealth;
     }
 
     void Update() {
-        if(currentHealth <= 0)
+        if(currentHealth <= 0) {
+            GameObject.Find("Player").GetComponent<CharacterStats>().AddExperience(expWhenDefeated);
             gameObject.SetActive(false);
+        }
     }
 
     public void DamageCharacter(int damage) {

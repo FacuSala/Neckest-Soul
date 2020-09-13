@@ -7,10 +7,6 @@ public class CharacterStats : MonoBehaviour {
     public float currentExp;
     public float[] expToLevelUp;
 
-    void Start() {
-        
-    }
-
     void Update() {
         if(currentLevel >= expToLevelUp.Length)
             return;
@@ -21,5 +17,13 @@ public class CharacterStats : MonoBehaviour {
 
     public void AddExperience(float exp) {
         currentExp += exp;
+    }
+
+    public float GetExpUntilNextLevel(){
+        return expToLevelUp[currentLevel] - expToLevelUp[currentLevel-1];
+    }
+
+    public float ExpCurrentLevl(){
+        return currentExp - expToLevelUp[currentLevel-1];
     }
 }

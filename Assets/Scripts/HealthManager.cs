@@ -30,6 +30,10 @@ public class HealthManager : MonoBehaviour {
             clone.GetComponent<DamageNumber>().damageText.color = Color.red;
     }
 
+    public void HealthCharacter(int health) {
+        currentHealth = currentHealth + health > maxHealth ? maxHealth : currentHealth + health;
+    }
+
     public void UpdateMaxHealth(int plusHealth) {
         maxHealth += plusHealth;
         currentHealth += plusHealth;

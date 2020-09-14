@@ -18,6 +18,7 @@ public class MagicManager : MonoBehaviour {
         if(currentMagic>=spell.GetComponent<SpellController>().mpCost){
             currentMagic -= spell.GetComponent<SpellController>().mpCost;
             GameObject clone = (GameObject) Instantiate(spell, this.transform.position, Quaternion.Euler(Vector3.zero));
+            clone.GetComponent<Rigidbody2D>().velocity = direction * spell.GetComponent<SpellController>().velocity;
         }
     }
 }

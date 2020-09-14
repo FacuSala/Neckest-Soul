@@ -6,6 +6,10 @@ public class SpellController : MonoBehaviour {
     public int mpCost;
     public int distance;
     public int damage;
+    public float velocity;
+
+    private void Start() {
+    }
 
     void OnTriggerEnter2D(Collider2D col) {
        if(col.CompareTag("Enemy")) {

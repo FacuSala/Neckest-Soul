@@ -7,11 +7,10 @@ public class SpellController : MonoBehaviour {
     public int distance;
     public int damage;
 
-    void Start() {
-        
-    }
-
-    void Update() {
-        
+    void OnTriggerEnter2D(Collider2D col) {
+       if(col.CompareTag("Enemy")) {
+           col.gameObject.GetComponent<HealthManager>().DamageCharacter(damage);
+           Destroy(gameObject);
+       } 
     }
 }

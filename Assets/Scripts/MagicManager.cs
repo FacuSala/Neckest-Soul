@@ -5,13 +5,19 @@ using UnityEngine;
 public class MagicManager : MonoBehaviour {
     public int maxMagic;
     public int currentMagic;
+    public GameObject spell;
 
     void Start() {
        currentMagic = maxMagic;
     }
     
-    public void UseMagic (int mp) {
-        if(currentMagic>=mp)
-            currentMagic -= mp;
+    public void UseMagic() {
+        if(!spell)
+            return;
+
+        if(currentMagic>=spell.GetComponent<SpellController>().mpCost){
+            currentMagic -= spell.GetComponent<SpellController>().mpCost;
+            GameObject clone = (GameObject) Instantiate(spell, this.transform.position, Quaternion.Euler(Vector3.zero));
+        }
     }
 }

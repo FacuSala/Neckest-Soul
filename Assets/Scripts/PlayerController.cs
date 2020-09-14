@@ -54,7 +54,7 @@ public class PlayerController : MonoBehaviour {
             }
         }
         if (Input.GetKeyDown(KeyCode.F)){
-            magicManager.UseMagic(1);
+            magicManager.UseMagic();
         }
         setMovement(x, y);
         setAnimation(x, y);

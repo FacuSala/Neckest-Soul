@@ -11,7 +11,7 @@ public class MagicManager : MonoBehaviour {
        currentMagic = maxMagic;
     }
     
-    public void UseMagic() {
+    public void UseMagic(Vector2 direction) {
         if(!spell)
             return;
 

@@ -17,8 +17,11 @@ public class MagicManager : MonoBehaviour {
 
         if(currentMagic>=spell.GetComponent<SpellController>().mpCost){
             currentMagic -= spell.GetComponent<SpellController>().mpCost;
-            GameObject clone = (GameObject) Instantiate(spell, this.transform.position, Quaternion.Euler(Vector3.zero));
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            GameObject clone = (GameObject) Instantiate(spell, this.transform.position, Quaternion.Euler(0,0,angle-90));
+            direction.Normalize();
             clone.GetComponent<Rigidbody2D>().velocity = direction * spell.GetComponent<SpellController>().velocity;
+        
         }
     }
 }

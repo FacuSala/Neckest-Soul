@@ -27,26 +27,34 @@ public class EnemyController : MonoBehaviour {
 
     void Update() {
         if (isMoving) {
-            timeToMakeStepCounter -= Time.deltaTime;
-            rigidbody.velocity = directionToMakeStep;
-
-            if (timeToMakeStepCounter < 0) {
-                isMoving = false;
-                timeBetweenStepsCounter = timeBetweenSteps;
-                rigidbody.velocity = Vector2.zero;
-            }
+            StartMovement();
         } else {
-            timeBetweenStepsCounter -= Time.deltaTime;
-
-            if (timeBetweenStepsCounter < 0) {
-                isMoving = true;
-                timeToMakeStepCounter = timeToMakeStep;
-                directionToMakeStep = new Vector2(Random.Range(-1,2), Random.Range(-1,2)) * speed;
-            }
+            StopMovement();
         }
 
         animator.SetFloat(horizontal, directionToMakeStep.x);
         animator.SetFloat(vertical, directionToMakeStep.y);
         animator.SetBool(isMovingState, isMoving);
+    }
+
+    private void StartMovement() {
+        timeToMakeStepCounter -= Time.deltaTime;
+        rigidbody.velocity = directionToMakeStep;
+
+        if (timeToMakeStepCounter < 0) {
+            isMoving = false;
+            timeBetweenStepsCounter = timeBetweenSteps;
+            rigidbody.velocity = Vector2.zero;
+        }
+    }
+
+    private void StopMovement() {
+        timeBetweenStepsCounter -= Time.deltaTime;
+
+        if (timeBetweenStepsCounter < 0) {
+            isMoving = true;
+            timeToMakeStepCounter = timeToMakeStep;
+            directionToMakeStep = new Vector2(Random.Range(-1,2), Random.Range(-1,2)) * speed;
+        }
     }
 }

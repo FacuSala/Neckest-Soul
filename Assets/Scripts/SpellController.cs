@@ -21,9 +21,13 @@ public class SpellController : MonoBehaviour {
     }
 
     void OnTriggerEnter2D(Collider2D col) {
-       if(col.CompareTag("Enemy")) {
+        if(col.CompareTag("Enemy")) {
            col.gameObject.GetComponent<HealthManager>().DamageCharacter(damage);
            Destroy(gameObject);
-       } 
+        }
+
+        if(col.CompareTag("Building") || col.CompareTag("NPC")) {
+           Destroy(gameObject);
+       }
     }
 }

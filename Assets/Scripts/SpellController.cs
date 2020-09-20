@@ -8,7 +8,7 @@ public class SpellController : MonoBehaviour {
     public int mpCost;
     public int distance;
     public int damage;
-    public float velocity;
+    public float speed;
 
     void Start() {
         initialPos = transform.position;

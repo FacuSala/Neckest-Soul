@@ -4,10 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class DamageNumber : MonoBehaviour {
+    private float timeToDestroy = .3f;
+    
     public float damageSpeed;
     public int damagePoints;
     public Text damageText;
-    private float timeToDestroy = .3f;
 
     void Update() {
         damageText.text = damagePoints.ToString();

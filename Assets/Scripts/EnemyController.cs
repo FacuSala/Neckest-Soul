@@ -3,19 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyController : MonoBehaviour {
-    public float speed = 1f;
-    private Rigidbody2D rigidbody;
-    public float timeBetweenSteps;
-    private float timeBetweenStepsCounter;
-    public float timeToMakeStep;
-    private float timeToMakeStepCounter;
-    public Vector2 directionToMakeStep;
-    private bool isMoving;
-
-    private Animator animator;
     private const string vertical = "Vertical";
     private const string horizontal = "Horizontal";
     private const string isMovingState = "isMoving";
+    private Rigidbody2D rigidbody;
+    private Animator animator;
+    private bool isMoving;
+    private float timeBetweenStepsCounter;
+    private float timeToMakeStepCounter;
+
+    public float speed = 1f;
+    public float timeBetweenSteps;
+    public float timeToMakeStep;
+    public Vector2 directionToMakeStep;
 
     void Start() {
         rigidbody = gameObject.GetComponent<Rigidbody2D>();

@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class SpawnZone : MonoBehaviour {
     private PlayerController player;
+
     public string spawnName;
-
-
     public Vector2 facingDirection;
+
     void Start() {
         player = FindObjectOfType<PlayerController>();
 

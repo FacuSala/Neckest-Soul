@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CharacterStats : MonoBehaviour {
+    private HealthManager healthManager;
+    
     public int currentLevel;
     public float currentExp;
     public float[] expToLevelUp;
-    private HealthManager healthManager;
 
     void Start() {
        healthManager = GetComponentInParent<HealthManager>(); 

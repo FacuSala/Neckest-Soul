@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
     public static bool playerCreated;
+
     private const string horizontal = "Horizontal";
     private const string vertical = "Vertical";
     private const string lastHorizontal = "LastHorizontal";
@@ -11,15 +12,14 @@ public class PlayerController : MonoBehaviour {
     private const string attacking = "Attacking";
 
     private MagicManager magicManager;
-
     private Animator animator;
     private Rigidbody2D rigidBody;
     private float timeToAttack = 0.5f;
     private float timeToAttackCounter;
-    public bool isAttacking;
-
-    public float speed = 10f;
     private float currentSpeed;
+
+    public bool isAttacking;
+    public float speed = 10f;
     public Vector2 lastMove;
     public GameObject weapon;
     public string nextSpawnName;

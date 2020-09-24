@@ -12,6 +12,7 @@ public class NPCMovement : MonoBehaviour {
     private float timeBetweenStepsCounter;
     private float timeToMakeStepCounter;
 
+    public bool isTalking;
     public float speed = 1f;
     public float timeBetweenSteps;
     public float timeToMakeStep;
@@ -28,10 +29,18 @@ public class NPCMovement : MonoBehaviour {
     }
 
     void Update() {
+        if(isTalking){
+            StopMovement();
+            return;
+        }
+
+        if(movementZone && isOutsideZone()){
+            StopMovement();
+            return;
+        }
+
         if (isMoving) {
             StartMovement();
-            if(movementZone && isOutsideZone())
-                StopMovement();
         } else {
             StopMovement();
         }
@@ -53,6 +62,7 @@ public class NPCMovement : MonoBehaviour {
     }
 
     private void StopMovement() {
+        rigidbody.velocity = Vector2.zero;
         isMoving = false;
         timeBetweenStepsCounter -= Time.deltaTime;
 

@@ -23,6 +23,7 @@ public class PlayerController : MonoBehaviour {
     public Vector2 lastMove;
     public GameObject weapon;
     public string nextSpawnName;
+    public bool isTalking;
 
     void Start() {
         rigidBody = GetComponent<Rigidbody2D>();
@@ -40,8 +41,14 @@ public class PlayerController : MonoBehaviour {
     }
 
     void Update() {
-        float x = Input.GetAxis(horizontal);
-        float y = Input.GetAxis(vertical);
+        float x = isTalking ? 0f : Input.GetAxis(horizontal);
+        float y = isTalking ? 0f : Input.GetAxis(vertical);
+
+        setMovement(x, y);
+        setAnimation(x, y);
+
+        if(isTalking)
+            return;
 
         if (Input.GetKeyDown(KeyCode.Space))
             isAttacking = true;
@@ -53,11 +60,10 @@ public class PlayerController : MonoBehaviour {
                 timeToAttackCounter = timeToAttack;
             }
         }
-        if (Input.GetKeyDown(KeyCode.F)){
+        
+        if (Input.GetKeyDown(KeyCode.F))
             magicManager.UseMagic(lastMove);
-        }
-        setMovement(x, y);
-        setAnimation(x, y);
+        
     }
 
     void setMovement(float x, float y) {

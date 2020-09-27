@@ -16,9 +16,8 @@ public class QuestItem : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.CompareTag("Player")){
             if(!questManager.questCompleted[questID]) {
-                questManager.itemCollected = itemName;
 
-                if(startItem && !questManager.quests[questID].gameObject.activeInHierarchy){
+                if(startItem && !questManager.quests[questID].gameObject.activeInHierarchy) {
                     questManager.quests[questID].gameObject.SetActive(true);
                     questManager.quests[questID].StartQuest();
                 }

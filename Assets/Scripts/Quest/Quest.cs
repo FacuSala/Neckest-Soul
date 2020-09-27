@@ -10,8 +10,6 @@ public class Quest : MonoBehaviour
     public float experience = 0;
     public int questID;
     public string startText, completeText;
-    public bool itemNeeded;
-    public string itemName;
 
     void Start() {
         questManager = FindObjectOfType<QuestManager>();

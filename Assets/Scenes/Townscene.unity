@@ -284,11 +284,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd526e1efb3b64efebd925eae8116f2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerStats: {fileID: 0}
+  playerStats: {fileID: 565942407}
   experience: 28
   questID: 1
-  startText: Has encontrado el Vaculo Mortal
-  completeText: Kill them all!
+  startText: Has encontrado el Vaculo Mortal. Encuentra el Hacha del destino
+  completeText: Has encontrado el Hacha del destino. Derrota a dos guardias.
+  needsItems: 1
+  itemName: SuperHacha
+  needsEnemies: 0
+  enemyName: 
+  numberOfEnemies: 0
 --- !u!1 &106342245
 GameObject:
   m_ObjectHideFlags: 0
@@ -62317,7 +62322,7 @@ GameObject:
   - component: {fileID: 699883548}
   - component: {fileID: 699883547}
   m_Layer: 0
-  m_Name: staff
+  m_Name: Quest1-Start
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -62425,12 +62430,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 699883546}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 37.640137, y: 12.663242, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -4.9385986, y: -2.8633676, z: 0}
+  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_Father: {fileID: 887052148}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &801558222
 GameObject:
@@ -62444,8 +62449,9 @@ GameObject:
   - component: {fileID: 801558226}
   - component: {fileID: 801558225}
   - component: {fileID: 801558224}
+  - component: {fileID: 801558227}
   m_Layer: 0
-  m_Name: staff (1)
+  m_Name: Axe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -62459,7 +62465,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 801558222}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.9385986, y: -2.8633676, z: 0}
+  m_LocalPosition: {x: -4.9385986, y: -2.936, z: 0}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children: []
   m_Father: {fileID: 77390489}
@@ -62478,7 +62484,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   questID: 1
-  startItem: 0
+  startItem: 1
   itemName: SuperHacha
 --- !u!60 &801558225
 PolygonCollider2D:
@@ -62496,8 +62502,8 @@ PolygonCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.2536108, y: 0.22584604}
-    oldSize: {x: 0.6875, y: 0.71875}
+    pivot: {x: 0.18089353, y: 0.28356266}
+    oldSize: {x: 0.8125, y: 0.71875}
     newSize: {x: 0.6875, y: 0.71875}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -62548,8 +62554,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 2912464402848211330, guid: 912aea8edb45a44eeaf15f2fe97e00e9,
-    type: 3}
+  m_Sprite: {fileID: 698664279297640794, guid: 912aea8edb45a44eeaf15f2fe97e00e9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -62560,6 +62565,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &801558227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 801558222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f4c0ffe363b740ca9fe8181544c2443, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questID: 2
+  startItem: 1
+  itemName: 
 --- !u!1 &816426183
 GameObject:
   m_ObjectHideFlags: 0
@@ -62660,6 +62680,7 @@ RectTransform:
   - {fileID: 1651740293}
   - {fileID: 2088523550}
   - {fileID: 1584730766}
+  - {fileID: 887052148}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -62780,12 +62801,106 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 885920083}
   m_CullTransparentMesh: 0
+--- !u!1 &887052147
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 887052148}
+  m_Layer: 5
+  m_Name: QuestItems
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &887052148
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 887052147}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 699883550}
+  m_Father: {fileID: 816426187}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!4 &905812781 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1847988699307628613, guid: 13bd15e833ced41fe96714f80e31a3ec,
     type: 3}
   m_PrefabInstance: {fileID: 1847988698383963744}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &907990087
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 907990088}
+  - component: {fileID: 907990089}
+  m_Layer: 5
+  m_Name: Quest2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &907990088
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 907990087}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2088523550}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &907990089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 907990087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd526e1efb3b64efebd925eae8116f2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerStats: {fileID: 565942407}
+  experience: 28
+  questID: 2
+  startText: 
+  completeText: Te has hecho muy fuerte!
+  needsItems: 0
+  itemName: 
+  needsEnemies: 1
+  enemyName: Guard
+  numberOfEnemies: 2
 --- !u!1 &1041598272
 GameObject:
   m_ObjectHideFlags: 0
@@ -63248,7 +63363,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 78027035
   m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -71577,7 +71692,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1592360182
 RectTransform:
   m_ObjectHideFlags: 0
@@ -71609,11 +71724,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd526e1efb3b64efebd925eae8116f2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerStats: {fileID: 0}
-  experience: 0
+  playerStats: {fileID: 565942407}
+  experience: 100
   questID: 0
   startText: Find the Old Man
   completeText: You find the Old Man. Talk to him.
+  needsItems: 0
+  itemName: 
+  needsEnemies: 0
+  enemyName: 
+  numberOfEnemies: 0
 --- !u!1 &1624796165
 GameObject:
   m_ObjectHideFlags: 0
@@ -115828,6 +115948,7 @@ RectTransform:
   m_Children:
   - {fileID: 1592360182}
   - {fileID: 77390489}
+  - {fileID: 907990088}
   m_Father: {fileID: 816426187}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -115851,8 +115972,10 @@ MonoBehaviour:
   quests:
   - {fileID: 1592360183}
   - {fileID: 77390490}
+  - {fileID: 907990089}
   questCompleted: 
   itemCollected: 
+  enemyKilled: 
 --- !u!4 &2103709902 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1847988699547616942, guid: 13bd15e833ced41fe96714f80e31a3ec,
@@ -115983,12 +116106,12 @@ PrefabInstance:
     - target: {fileID: 1847988699547616942, guid: 13bd15e833ced41fe96714f80e31a3ec,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 30.07
       objectReference: {fileID: 0}
     - target: {fileID: 1847988699547616942, guid: 13bd15e833ced41fe96714f80e31a3ec,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.5
+      value: 12.45
       objectReference: {fileID: 0}
     - target: {fileID: 1847988699547616942, guid: 13bd15e833ced41fe96714f80e31a3ec,
         type: 3}
@@ -116225,11 +116348,31 @@ PrefabInstance:
       propertyPath: m_TagString
       value: MainCamera
       objectReference: {fileID: 0}
+    - target: {fileID: 4749261780964310558, guid: 6dd14651fc4ff43ea8e3320a4e91e3cd,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 30.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 4749261780964310558, guid: 6dd14651fc4ff43ea8e3320a4e91e3cd,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 12.45
+      objectReference: {fileID: 0}
     - target: {fileID: 4749261780964310559, guid: 6dd14651fc4ff43ea8e3320a4e91e3cd,
         type: 3}
       propertyPath: m_Follow
       value: 
       objectReference: {fileID: 2103709902}
+    - target: {fileID: 4749261781600241425, guid: 6dd14651fc4ff43ea8e3320a4e91e3cd,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 30.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 4749261781600241425, guid: 6dd14651fc4ff43ea8e3320a4e91e3cd,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 12.45
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6dd14651fc4ff43ea8e3320a4e91e3cd, type: 3}
 --- !u!1001 &5540729863396794744

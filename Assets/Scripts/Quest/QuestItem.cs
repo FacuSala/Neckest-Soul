@@ -17,14 +17,14 @@ public class QuestItem : MonoBehaviour {
         if(other.CompareTag("Player")){
             if(!questManager.questCompleted[questID]) {
 
+                if(!startItem && questManager.quests[questID].gameObject.activeInHierarchy)
+                    questManager.itemCollected = itemName;
+
                 if(startItem && !questManager.quests[questID].gameObject.activeInHierarchy) {
                     questManager.quests[questID].gameObject.SetActive(true);
                     questManager.quests[questID].StartQuest();
                 }
-
-                if(!startItem && questManager.quests[questID].gameObject.activeInHierarchy)
-                    questManager.quests[questID].CompleteQuest();
-
+                
                 gameObject.SetActive(false);
             }
         }

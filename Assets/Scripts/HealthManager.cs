@@ -4,18 +4,23 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class HealthManager : MonoBehaviour {
+    private QuestManager questManager;
+    
     public GameObject damageNumber;
+    public string enemyName;
     public int maxHealth;
     public int currentHealth;
     public float expWhenDefeated;
 
     void Start() {
         currentHealth = maxHealth;
+        questManager = FindObjectOfType<QuestManager>();
     }
 
     void Update() {
         if(currentHealth <= 0) {
             GameObject.Find("Player").GetComponent<CharacterStats>().AddExperience(expWhenDefeated);
+            questManager.enemyKilled = enemyName;
             gameObject.SetActive(false);
         }
     }

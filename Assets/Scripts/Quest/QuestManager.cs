@@ -7,6 +7,7 @@ public class QuestManager : MonoBehaviour {
 
     public Quest[] quests;
     public bool[] questCompleted;
+    public string itemCollected;
 
     void Start() {
         questCompleted = new bool[quests.Length];

@@ -62321,6 +62321,7 @@ GameObject:
   - component: {fileID: 699883549}
   - component: {fileID: 699883548}
   - component: {fileID: 699883547}
+  - component: {fileID: 699883551}
   m_Layer: 0
   m_Name: Quest1-Start
   m_TagString: Untagged
@@ -62437,6 +62438,19 @@ Transform:
   m_Father: {fileID: 887052148}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &699883551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 699883546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8db96e091bf3a0b41a5c94d0be9ad8ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasPolygonCollider2D: 1
 --- !u!1 &801558222
 GameObject:
   m_ObjectHideFlags: 0
